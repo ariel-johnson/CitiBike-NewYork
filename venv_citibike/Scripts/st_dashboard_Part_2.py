@@ -1,5 +1,14 @@
 ################################################ NEW YORK CITIBIKES DASHABOARD #####################################################
 
+import subprocess
+import sys
+
+# Force installation of plotly if it's missing
+try:
+    import plotly
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
+
 import streamlit as st
 import pandas as pd 
 import numpy as np
