@@ -1,3 +1,5 @@
+! pip install plotly
+
 ################################################ NEW YORK CITIBIKES DASHABOARD #####################################################
 
 import streamlit as st
