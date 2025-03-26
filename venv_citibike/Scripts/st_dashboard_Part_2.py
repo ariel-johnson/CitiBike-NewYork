@@ -1,4 +1,4 @@
-! pip install streamlit pandas numpy plotly matplotlib streamlit-keplergl keplergl pillow numerize
+!pip install streamlit pandas numpy plotly matplotlib streamlit-keplergl keplergl pillow numerize
 
 ################################################ NEW YORK CITIBIKES DASHABOARD #####################################################
 
