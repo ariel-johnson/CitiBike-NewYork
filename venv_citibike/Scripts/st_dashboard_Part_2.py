@@ -1,4 +1,6 @@
-!pip install streamlit pandas numpy plotly matplotlib streamlit-keplergl keplergl pillow numerize
+import subprocess
+import sys
+subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
 
 ################################################ NEW YORK CITIBIKES DASHABOARD #####################################################
 
