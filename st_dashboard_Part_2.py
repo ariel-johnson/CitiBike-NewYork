@@ -28,7 +28,12 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
 
 ########################## Import data ###########################################################################################
 
-df = pd.read_csv('dataset_wrangledsample.csv', index_col = 0, low_memory=False)
+# Set up the file uploader widget in Streamlit
+uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+
+if uploaded_file is not None:
+    # Read the uploaded CSV file into a DataFrame
+    df = pd.read_csv(uploaded_file, index_col=0, low_memory=False)
 top20 = pd.read_csv('top20.csv', index_col = 0)
 
 ######################################### DEFINE THE PAGES #####################################################################
