@@ -28,7 +28,7 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
 
 ########################## Import data ###########################################################################################
 
-df = pd.read_csv('dataset_wrangledsample.csv', index_col = 0, low_memory=False)
+df = pd.read_csv('yessample.csv', index_col = 0, low_memory=False)
 top20 = pd.read_csv('top20.csv', index_col = 0)
 
 ######################################### DEFINE THE PAGES #####################################################################
