@@ -209,8 +209,11 @@ elif page == 'Interactive map with aggregated bike trips':
 
 else:
     st.header("Conclusions and recommendations")
-    bikes = Image.open("successful_chart.jpg")  # Source : https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-photos%2Fsuccess-diagram&psig=AOvVaw1T08uqfku_0pb1XkmECwc5&ust=1742926573353000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDfstupo4wDFQAAAAAdAAAAABAE
-    st.image(bikes)
+   # Upload the second image file (successful_chart.jpg)
+uploaded_image_2 = st.file_uploader("Upload the image file: successful_chart.jpg", type=["jpg", "jpeg", "png"])
+if uploaded_image_2 is not None:
+    bikes = Image.open(uploaded_image_2)
+    st.image(bikes, caption="Uploaded Image: Successful Chart", use_column_width=True)
     st.markdown("### Our analysis has shown that New York CitiBike should focus on the following objectives moving forward:")
     st.markdown("- Given the clear correlation between warmer temperatures and higher bike usage, CitiBike should consider scaling up its fleet during peak months (May-October). This would help address customer complaints about bike unavailability and ensure more bikes are available during high-demand periods.")
     st.markdown("- Stations such as W 21 St/6 Ave, West St/Chambers St, as well as Broadway/W 58 St show high levels of demand. CitiBike could explore expanding bike capacity at these locations and adding more stations in densely populated areas with frequent usage.")
