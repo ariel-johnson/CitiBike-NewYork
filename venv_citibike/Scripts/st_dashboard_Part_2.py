@@ -109,11 +109,11 @@ if page == "Intro page":
     st.markdown("- Recommendations")
     st.markdown("The dropdown menu on the left 'Aspect Selector' will take you to the different aspects of the analysis our team looked at.")
 
-    # Upload the image file
-uploaded_image = st.file_uploader("Upload the image file: CitiBikes.jpg", type=["jpg", "jpeg", "png"])
-if uploaded_image is not None:
-    myImage = Image.open(uploaded_image)
-    st.image(myImage, caption="Uploaded Image", use_column_width=True)
+   # Upload the first image file (CitiBikes.jpg)
+uploaded_image_1 = st.file_uploader("Upload the image file: CitiBikes.jpg", type=["jpg", "jpeg", "png"])
+if uploaded_image_1 is not None:
+    myImage = Image.open(uploaded_image_1)
+    st.image(myImage, caption="Uploaded Image: CitiBikes", use_container_width=True)
 
 # Page for 'Weather component and bike usage'
 elif page == 'Weather component and bike usage':
@@ -213,6 +213,7 @@ else:
 uploaded_image_2 = st.file_uploader("Upload the image file: successful_chart.jpg", type=["jpg", "jpeg", "png"])
 if uploaded_image_2 is not None:
     bikes = Image.open(uploaded_image_2)
+    st.image(bikes, caption="Uploaded Image: Successful Chart", use_container_width=True)
     st.image(bikes, caption="Uploaded Image: Successful Chart", use_column_width=True)
     st.markdown("### Our analysis has shown that New York CitiBike should focus on the following objectives moving forward:")
     st.markdown("- Given the clear correlation between warmer temperatures and higher bike usage, CitiBike should consider scaling up its fleet during peak months (May-October). This would help address customer complaints about bike unavailability and ensure more bikes are available during high-demand periods.")
