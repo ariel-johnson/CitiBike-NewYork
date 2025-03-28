@@ -28,8 +28,13 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
 
 ########################## Import data ###########################################################################################
 
-path = '/mount/src/citibike-newyork/reduced_data_to_plot_7.csv'
-df = pd.read_csv(path, index_col=0, low_memory=False)
+# Streamlit file uploader widget
+uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+
+# If the user uploaded a file
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file, index_col=0, low_memory=False)
+    st.write(df)
 top20 = pd.read_csv('top20.csv', index_col = 0)
 
 ######################################### DEFINE THE PAGES #####################################################################
