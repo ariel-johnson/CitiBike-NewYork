@@ -214,7 +214,6 @@ uploaded_image_2 = st.file_uploader("Upload the image file: successful_chart.jpg
 if uploaded_image_2 is not None:
     bikes = Image.open(uploaded_image_2)
     st.image(bikes, caption="Uploaded Image: Successful Chart", use_container_width=True)
-    st.image(bikes, caption="Uploaded Image: Successful Chart", use_column_width=True)
     st.markdown("### Our analysis has shown that New York CitiBike should focus on the following objectives moving forward:")
     st.markdown("- Given the clear correlation between warmer temperatures and higher bike usage, CitiBike should consider scaling up its fleet during peak months (May-October). This would help address customer complaints about bike unavailability and ensure more bikes are available during high-demand periods.")
     st.markdown("- Stations such as W 21 St/6 Ave, West St/Chambers St, as well as Broadway/W 58 St show high levels of demand. CitiBike could explore expanding bike capacity at these locations and adding more stations in densely populated areas with frequent usage.")
