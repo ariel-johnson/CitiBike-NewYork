@@ -31,12 +31,12 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
 ########################## Import data ###########################################################################################
 
 # Upload the first CSV file (reduced_data_to_plot_7.csv)
-uploaded_file_1 = st.file_uploader("Choose the first CSV file: reduced_data_to_plot_7.csv", type="csv")
+uploaded_file_1 = st.sidebar.file_uploader("Choose the first CSV file: reduced_data_to_plot_7.csv", type="csv")
 if uploaded_file_1 is not None:
     df = pd.read_csv(uploaded_file_1, index_col=0, low_memory=False)
 
 # Upload the second CSV file (top20.csv)
-uploaded_file_2 = st.file_uploader("Choose the second CSV file: top20.csv", type="csv")
+uploaded_file_2 = st.sidebar.file_uploader("Choose the second CSV file: top20.csv", type="csv")
 if uploaded_file_2 is not None:
     top20 = pd.read_csv(uploaded_file_2, index_col=0)
 
@@ -107,10 +107,10 @@ if page == "Intro page":
     st.markdown("- Recommendations")
     st.markdown("The dropdown menu on the left 'Aspect Selector' will take you to the different aspects of the analysis our team looked at.")
 
-   # Display hardcoded image for Intro page (replace with your local or hosted image path)
-    intro_image_path = "C:\Users\ariel\OneDrive\Desktop\School work\Data Visualizations with Python/CitiBikes.jpg"  
-    st.subheader("CitiBikes Image")
-    st.image(intro_image_path, caption="CitiBikes Overview", use_container_width=True)
+   # Upload the first image file (CitiBikes.jpg) for the Intro page
+uploaded_image_1 = st.sidebar.file_uploader("Upload the image file: CitiBikes.jpg", type=["jpg", "jpeg", "png"])
+if uploaded_image_1 is not None:
+    myImage = Image.open(uploaded_image_1)
 
 # Page for 'Weather component and bike usage'
 elif page == 'Weather component and bike usage':
@@ -206,10 +206,10 @@ elif page == 'Interactive map with aggregated bike trips':
 
 else:
     st.header("Conclusions and recommendations")
-   # Display hardcoded image for Recommendations page (replace with your local or hosted image path)
-    recommendation_image_path = "C:\Users\ariel\OneDrive\Desktop\School work\Data Visualizations with Python/successful_chart.jpg"  
-    st.subheader("Successful Chart")
-    st.image(recommendation_image_path, caption="Successful Chart", use_container_width=True)
+   # Upload the second image file (successful_chart.jpg) for the Recommendations page
+uploaded_image_2 = st.sidebar.file_uploader("Upload the image file: successful_chart.jpg", type=["jpg", "jpeg", "png"])
+if uploaded_image_2 is not None:
+    bikes = Image.open(uploaded_image_2)
     st.markdown("### Our analysis has shown that New York CitiBike should focus on the following objectives moving forward:")
     st.markdown("- Given the clear correlation between warmer temperatures and higher bike usage, CitiBike should consider scaling up its fleet during peak months (May-October). This would help address customer complaints about bike unavailability and ensure more bikes are available during high-demand periods.")
     st.markdown("- Stations such as W 21 St/6 Ave, West St/Chambers St, as well as Broadway/W 58 St show high levels of demand. CitiBike could explore expanding bike capacity at these locations and adding more stations in densely populated areas with frequent usage.")
