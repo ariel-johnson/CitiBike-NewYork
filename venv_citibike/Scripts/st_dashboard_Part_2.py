@@ -34,15 +34,11 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
 uploaded_file_1 = st.sidebar.file_uploader("Choose the first CSV file: reduced_data_to_plot_7.csv", type="csv")
 if uploaded_file_1 is not None:
     df1 = pd.read_csv(uploaded_file_1, index_col=0, low_memory=False)
-    st.subheader("Data from reduced_data_to_plot_7.csv")
-    st.write(df1)
 
 # Upload the second CSV file (top20.csv)
 uploaded_file_2 = st.sidebar.file_uploader("Choose the second CSV file: top20.csv", type="csv")
 if uploaded_file_2 is not None:
     top20 = pd.read_csv(uploaded_file_2, index_col=0)
-    st.subheader("Data from top20.csv")
-    st.write(top20)
 
 ######################################### DEFINE THE PAGES #####################################################################
 
@@ -111,12 +107,12 @@ if page == "Intro page":
     st.markdown("- Recommendations")
     st.markdown("The dropdown menu on the left 'Aspect Selector' will take you to the different aspects of the analysis our team looked at.")
 
-  # Upload the first image file (CitiBikes.jpg)
-uploaded_image_1 = st.sidebar.file_uploader("Upload the image file: CitiBikes.jpg", type=["jpg", "jpeg", "png"])
-if uploaded_image_1 is not None:
-    myImage = Image.open(uploaded_image_1)
-    st.subheader("Uploaded Image: CitiBikes")
-    st.image(myImage, caption="Uploaded Image: CitiBikes", use_container_width=True)
+   # Image for Intro page
+    uploaded_image_1 = st.sidebar.file_uploader("Upload the image file: CitiBikes.jpg", type=["jpg", "jpeg", "png"])
+    if uploaded_image_1 is not None:
+        myImage = Image.open(uploaded_image_1)
+        st.subheader("Uploaded Image: CitiBikes")
+        st.image(myImage, caption="Uploaded Image: CitiBikes", use_container_width=True)
 
 # Page for 'Weather component and bike usage'
 elif page == 'Weather component and bike usage':
@@ -212,14 +208,12 @@ elif page == 'Interactive map with aggregated bike trips':
 
 else:
     st.header("Conclusions and recommendations")
-   # Upload the second image file (successful_chart.jpg)
-# Upload the second image file (successful_chart.jpg)
-uploaded_image_2 = st.sidebar.file_uploader("Upload the image file: successful_chart.jpg", type=["jpg", "jpeg", "png"])
-if uploaded_image_2 is not None:
-    bikes = Image.open(uploaded_image_2)
-    st.subheader("Uploaded Image: Successful Chart")
-    st.image(bikes, caption="Uploaded Image: Successful Chart", use_container_width=True)
-
+   # Image for Recommendations page
+    uploaded_image_2 = st.sidebar.file_uploader("Upload the image file: successful_chart.jpg", type=["jpg", "jpeg", "png"])
+    if uploaded_image_2 is not None:
+        bikes = Image.open(uploaded_image_2)
+        st.subheader("Uploaded Image: Successful Chart")
+        st.image(bikes, caption="Uploaded Image: Successful Chart", use_container_width=True)
     st.markdown("### Our analysis has shown that New York CitiBike should focus on the following objectives moving forward:")
     st.markdown("- Given the clear correlation between warmer temperatures and higher bike usage, CitiBike should consider scaling up its fleet during peak months (May-October). This would help address customer complaints about bike unavailability and ensure more bikes are available during high-demand periods.")
     st.markdown("- Stations such as W 21 St/6 Ave, West St/Chambers St, as well as Broadway/W 58 St show high levels of demand. CitiBike could explore expanding bike capacity at these locations and adding more stations in densely populated areas with frequent usage.")
