@@ -28,14 +28,19 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
 
 ########################## Import data ###########################################################################################
 
-# Streamlit file uploader widget
-uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+# Upload first file
+uploaded_file_1 = st.file_uploader("Choose the first CSV file: reduced_data_to_plot_7.csv", type="csv")
+if uploaded_file_1 is not None:
+    df1 = pd.read_csv(uploaded_file_1, index_col=0, low_memory=False)
+    st.write("Data from reduced_data_to_plot_7.csv:")
+    st.write(df1)
 
-# If the user uploaded a file
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file, index_col=0, low_memory=False)
-    st.write(df)
-top20 = pd.read_csv('top20.csv', index_col = 0)
+# Upload second file
+uploaded_file_2 = st.file_uploader("Choose the second CSV file: top20.csv", type="csv")
+if uploaded_file_2 is not None:
+    top20 = pd.read_csv(uploaded_file_2, index_col=0)
+    st.write("Data from top20.csv:")
+    st.write(top20)
 
 ######################################### DEFINE THE PAGES #####################################################################
 
