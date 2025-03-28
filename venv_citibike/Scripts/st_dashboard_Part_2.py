@@ -31,12 +31,12 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
 ########################## Import data ###########################################################################################
 
 # Upload the first CSV file (reduced_data_to_plot_7.csv)
-uploaded_file_1 = st.sidebar.file_uploader("Choose the first CSV file: reduced_data_to_plot_7.csv", type="csv")
+uploaded_file_1 = st.file_uploader("Choose the first CSV file: reduced_data_to_plot_7.csv", type="csv")
 if uploaded_file_1 is not None:
-    df1 = pd.read_csv(uploaded_file_1, index_col=0, low_memory=False)
+    df = pd.read_csv(uploaded_file_1, index_col=0, low_memory=False)
 
 # Upload the second CSV file (top20.csv)
-uploaded_file_2 = st.sidebar.file_uploader("Choose the second CSV file: top20.csv", type="csv")
+uploaded_file_2 = st.file_uploader("Choose the second CSV file: top20.csv", type="csv")
 if uploaded_file_2 is not None:
     top20 = pd.read_csv(uploaded_file_2, index_col=0)
 
@@ -108,7 +108,7 @@ if page == "Intro page":
     st.markdown("The dropdown menu on the left 'Aspect Selector' will take you to the different aspects of the analysis our team looked at.")
 
    # Image for Intro page
-    uploaded_image_1 = st.sidebar.file_uploader("Upload the image file: CitiBikes.jpg", type=["jpg", "jpeg", "png"])
+    uploaded_image_1 = st.file_uploader("Upload the image file: CitiBikes.jpg", type=["jpg", "jpeg", "png"])
     if uploaded_image_1 is not None:
         myImage = Image.open(uploaded_image_1)
         st.subheader("Uploaded Image: CitiBikes")
@@ -209,7 +209,7 @@ elif page == 'Interactive map with aggregated bike trips':
 else:
     st.header("Conclusions and recommendations")
    # Image for Recommendations page
-    uploaded_image_2 = st.sidebar.file_uploader("Upload the image file: successful_chart.jpg", type=["jpg", "jpeg", "png"])
+    uploaded_image_2 = st.file_uploader("Upload the image file: successful_chart.jpg", type=["jpg", "jpeg", "png"])
     if uploaded_image_2 is not None:
         bikes = Image.open(uploaded_image_2)
         st.subheader("Uploaded Image: Successful Chart")
