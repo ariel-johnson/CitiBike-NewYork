@@ -28,10 +28,8 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
 
 ########################## Import data ###########################################################################################
 
-url = "https://raw.githubusercontent.com/ariel-johnson/CitiBike-NewYork/refs/heads/main/venv_citibike/Scripts/yessample.csv"
-url2 = "https://raw.githubusercontent.com/ariel-johnson/CitiBike-NewYork/refs/heads/main/venv_citibike/Scripts/top20.csv"
-df = pd.read_csv(url, index_col = 0, low_memory=False)
-top20 = pd.read_csv(url2, index_col = 0)
+df = pd.read_csv('reduced_data_to_plot_7.csv', index_col = 0, low_memory=False)
+top20 = pd.read_csv('top20.csv', index_col = 0)
 
 ######################################### DEFINE THE PAGES #####################################################################
 
