@@ -28,6 +28,25 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
    "User Type and Member Distribution", "Most popular stations",
     "Interactive map with aggregated bike trips", "Recommendations"])
 
+# Upload the first CSV file (reduced_data_to_plot_7.csv)
+uploaded_file_1 = st.sidebar.file_uploader("Choose the first CSV file: reduced_data_to_plot_7.csv", type="csv")
+if uploaded_file_1 is not None:
+    df = pd.read_csv(uploaded_file_1, index_col=0, low_memory=False)
+
+# Upload the second CSV file (top20.csv)
+uploaded_file_2 = st.sidebar.file_uploader("Choose the second CSV file: top20.csv", type="csv")
+if uploaded_file_2 is not None:
+    top20 = pd.read_csv(uploaded_file_2, index_col=0)
+
+# Upload the first image file (CitiBikes.jpg) for the Intro page
+uploaded_image_1 = st.sidebar.file_uploader("Upload the image file: CitiBikes.jpg", type=["jpg", "jpeg", "png"])
+if uploaded_image_1 is not None:
+    myImage = Image.open(uploaded_image_1)
+
+# Upload the second image file (successful_chart.jpg) for the Recommendations page
+uploaded_image_2 = st.sidebar.file_uploader("Upload the image file: successful_chart.jpg", type=["jpg", "jpeg", "png"])
+if uploaded_image_2 is not None:
+    bikes = Image.open(uploaded_image_2)
 ########################## Import data ###########################################################################################
 
 # Upload the first CSV file (reduced_data_to_plot_7.csv)
