@@ -109,8 +109,11 @@ if page == "Intro page":
     st.markdown("- Recommendations")
     st.markdown("The dropdown menu on the left 'Aspect Selector' will take you to the different aspects of the analysis our team looked at.")
 
-    myImage = Image.open("CitiBikes.jpg")  
-    st.image(myImage)
+    # Upload the image file
+uploaded_image = st.file_uploader("Upload the image file: CitiBikes.jpg", type=["jpg", "jpeg", "png"])
+if uploaded_image is not None:
+    myImage = Image.open(uploaded_image)
+    st.image(myImage, caption="Uploaded Image", use_column_width=True)
 
 # Page for 'Weather component and bike usage'
 elif page == 'Weather component and bike usage':
