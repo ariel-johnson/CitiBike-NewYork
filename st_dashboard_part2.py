@@ -141,7 +141,9 @@ elif page == 'Most popular stations':
     )
     
     st.plotly_chart(fig, use_container_width=True)
-    st.markdown("From the bar chart it is clear that there are some start stations that are more popular than others - in the top 3 we can see W 21 St/6 Ave, West St/Chambers St as well as Broadway/W 58 St. There is a big jump between the highest and lowest bars of the plot, indicating some clear preferences for the leading stations. This is a finding that we could cross-reference with the interactive map that you can access through the side bar select box.")
+    st.markdown("From the bar chart it is clear that overall, there are some start stations that are more popular than others - in the top 3 we can see W 21 St/6 Ave, West St/Chambers St as well as Broadway/W 58 St." )
+    st.markdown("During Fall and Winter, W 21 St/6 Ave consistently have the most trips.")
+    st.markdown("During Spring and Summer, West St/Chambers St becomes the most popular station.")
 
  # User type and member distribution bar and pie plots page
 elif page == 'User Type and Member Distribution':
@@ -179,7 +181,7 @@ elif page == 'Interactive map with aggregated bike trips':
     # Add the map 
     st.write("Interactive map showing aggregated bike trips over New York")
 
-    path_to_html = "NewYorkCitiBikeTripData (1).html" 
+    path_to_html = "NewYorkCitiBikeTripData.html" 
 
     # Read file and keep in variable
     with open(path_to_html, 'r') as f: 
@@ -189,8 +191,7 @@ elif page == 'Interactive map with aggregated bike trips':
     st.header("Aggregated Bike Trips in New York")
     st.components.v1.html(html_data, height=1000)
     st.markdown("#### Using the filter on the left-hand side of the map, we can check whether the most popular start stations also appear in the most popular trips.")
-    st.markdown("The most common trips for 2022 occurred at the Central Park S & 6 Ave station, as it had 633 trips where customers started and ended at the same station. In this general area, most trips occurred between the same stations, the other stations being Grand Army Plaza & Central Park S, 7 Ave & Central Park South, and Broadway & W 58 St. The West Drive & Prospect Park West is one station that has a lot of common trips below downtown Brooklyn, mostly trips that start and end at the same station.")
-    st.markdown("There are a lot of longer trips occurring between the Brooklyn and Queens area, so it may be a good idea to utilize adding more stations between these areas.")
+    st.markdown("A high number of trips through central New York, and there is opportunity for expansion near waterfront areas, namely near Battery Park where West St/Chambers St is located and is a popular station during warmer months.")
 
 
 else:
@@ -199,7 +200,7 @@ else:
     st.image(bikes)
     st.markdown("### Our analysis has shown that New York CitiBike should focus on the following objectives moving forward:")
     st.markdown("- Given the clear correlation between warmer temperatures and higher bike usage, CitiBike should consider scaling up its fleet during peak months (May-October). This would help address customer complaints about bike unavailability and ensure more bikes are available during high-demand periods.")
-    st.markdown("- Stations such as W 21 St/6 Ave, West St/Chambers St, as well as Broadway/W 58 St show high levels of demand. CitiBike could explore expanding bike capacity at these locations and adding more stations in densely populated areas with frequent usage.")
-    st.markdown("- There is significant travel between Brooklyn and Queens, suggesting a gap in bike station availability. Adding more stations between these two locations could help fill this gap and improve overall network coverage.")
+    st.markdown("- Stations such as W 21 St/6 Ave, West St/Chambers St, as well as Broadway/W 58 St show high levels of demand. CitiBike could explore expanding bike capacity at these locations and adding more stations in densely populated areas with frequent usage, and this includes the area surrounding Battery Park at the waterfront as well.")
+    st.markdown("- Instead of a uniform scaling back of bikes during the winter, I recommend a dynamic allocation model where bikes are reduced at low-demand stations, but kept at high demand stations, such as W 21/6 Ave as well as Broadway/W 58 st.")
     st.markdown("- Since classic bikes are used more often than electric bikes, CitiBike should assess whether the electric bike fleet is large enough to meet the growing demand. Expanding electric bike availability could attract more users, particularly for longer trips.")
     st.markdown("- Consider creating an incentive program to reward loyal members, and entice casual users to become members. This could include offering reward points for members based on the amount of miles they have ridden. These points could then be redeemed for discounts, free rides, or special rewards. Another incentive recommendation is a referral bonus for new riders, where both the referrer and the new user gets reward points when a first-time rider joins CitiBike as a member using a referral code. These ideas can help grow the user base while rewarding loyal customers.")
